@@ -1,0 +1,64 @@
+#container {
+  position: relative;
+  width: 1000px;
+  height: 600px;
+  overflow: hidden;
+}
+
+#anchor {
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  background-color: black;
+  border-radius: 5px;
+  top: 0px;
+  left: calc(50% - 100px);
+  z-index: 500;
+}
+
+#pendulum-weight {
+  position: absolute;
+  left: calc(50% - 75px);
+  width: 75px;
+  height: 75px;
+  background: black;
+  border-radius: 100%;
+  position: relative;
+  animation: oscilate 3s infinite;
+  z-index: 200;
+}
+
+/* #wire {
+  position: absolute;
+  top: -400px;
+  left: calc(50% - 50px);
+  width: 5px;
+  height: 800px;
+  background-color: gray;
+  animation: oscilate-wire 3s infinite;
+  z-index: 100;
+} */
+
+@keyframes oscilate {
+  0% {
+    transform: rotate(30deg) translateX(400px) rotate(30deg);
+  }
+  50% {
+    transform: rotate(150deg) translateX(400px) rotate(-135deg);
+  }
+  100% {
+    transform: rotate(30deg) translateX(400px) rotate(30deg);
+  }
+}
+
+@keyframes oscilate-wire {
+  0% {
+    transform: rotateZ(45deg) rotate(80deg);
+  }
+  50% {
+    transform: rotateZ(115deg) rotate(120deg);
+  }
+  100% {
+    transform: rotateZ(45deg) rotate(80deg);
+  }
+}

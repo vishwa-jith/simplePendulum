@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SIMPLE PENDULUM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <div class="row">
+      <h1 class="text-center bg-dark text-light">SIMPLE PENDULUM</h1>
+      <div id="container" class="col">
+        <div id="mask"></div>
+        <div id="anchor"></div>
+        <div id="pendulum-weight" style="animation: oscilate 3s infinite"></div>
+        <div
+          id="wire"
+          style="
+            position: absolute;
+            top: -400px;
+            left: calc(50% - 50px);
+            width: 5px;
+            height: 800px;
+            background-color: gray;
+            animation: oscilate-wire 3s infinite;
+            z-index: 100;
+          "
+        ></div>
+      </div>
+      <div class="col-3">
+        <h1 class="text-center bg-dark text-light">VARIABLES</h1>
+        <label for="length">length (mm)</label>
+        <br />
+        <input
+          id="length"
+          name="length"
+          type="number"
+          placeholder="Supension length"
+        />
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </head>
+  <body></body>
+</html>
