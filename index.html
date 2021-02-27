@@ -18,19 +18,7 @@
         <div id="mask"></div>
         <div id="anchor"></div>
         <div id="pendulum-weight" style="animation: oscilate 3s infinite"></div>
-        <div
-          id="wire"
-          style="
-            position: absolute;
-            top: -400px;
-            left: calc(50% - 50px);
-            width: 5px;
-            height: 800px;
-            background-color: gray;
-            animation: oscilate-wire 3s infinite;
-            z-index: 100;
-          "
-        ></div>
+        <div id="wire" style="animation: oscilate-wire 3s infinite"></div>
       </div>
       <div class="col-3">
         <h1 class="text-center bg-dark text-light">VARIABLES</h1>
@@ -42,6 +30,9 @@
           type="number"
           placeholder="Supension length"
         />
+        <h1 class="text-center bg-dark text-light">CONTROLS</h1>
+        <button id="start">Start</button>
+        <button id="stop">stop</button>
       </div>
     </div>
     <script
