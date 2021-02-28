@@ -11,7 +11,14 @@ let pendulumWave = document.querySelector("#pendulum-wave");
 length = 100;
 
 suspensionLength.addEventListener("change", (event) => {
-  if (event.target.value > 100) {
+  if (length == 200 && event.target.value < 200) {
+    length = 100;
+    suspensionLength.value = 100;
+    timePeriod.innerHTML = "2.0061 sec";
+    naturalFrequencyRad.innerHTML = "3.1321 rad/s";
+    naturalFrequencyHz.innerHTML = "0.4985 Hz";
+    pendulumWave.src = "./images/l100.png";
+  } else if (event.target.value > 100) {
     length = 200;
     suspensionLength.value = 200;
     timePeriod.innerHTML = "3.0061 sec";
@@ -78,9 +85,17 @@ suspensionLength.addEventListener("change", (event) => {
 stop.addEventListener("click", () => {
   pendulumWeight.style["animation-play-state"] = "paused";
   wire.style["animation-play-state"] = "paused";
+  start.classList.add("btn-outline-dark");
+  start.classList.remove("btn-dark");
+  stop.classList.add("btn-dark");
+  stop.classList.remove("btn-outline-dark");
 });
 
 start.addEventListener("click", () => {
   pendulumWeight.style["animation-play-state"] = "running";
   wire.style["animation-play-state"] = "running";
+  stop.classList.add("btn-outline-dark");
+  stop.classList.remove("btn-dark");
+  start.classList.add("btn-dark");
+  start.classList.remove("btn-outline-dark");
 });
