@@ -1,6 +1,11 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
 #container {
   position: relative;
-  width: 1000px;
+  width: 800px;
   height: 600px;
   overflow: hidden;
 }
@@ -30,24 +35,28 @@
 
 #wire {
   position: absolute;
-  top: -400px;
+  top: -200px;
   left: calc(50% - 50px);
   width: 5px;
-  height: 800px;
+  height: 400px;
   background-color: gray;
   /* animation: oscilate-wire 3s infinite; */
   z-index: 100;
 }
-
+.dark-heading {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
 @keyframes oscilate {
   0% {
-    transform: rotate(30deg) translateX(400px) rotate(30deg);
+    transform: rotate(30deg) translateX(200px) rotate(30deg);
   }
   50% {
-    transform: rotate(150deg) translateX(400px) rotate(-135deg);
+    transform: rotate(150deg) translateX(200px) rotate(-135deg);
   }
   100% {
-    transform: rotate(30deg) translateX(400px) rotate(30deg);
+    transform: rotate(30deg) translateX(200px) rotate(30deg);
   }
 }
 

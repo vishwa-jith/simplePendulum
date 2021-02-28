@@ -11,9 +11,16 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/main.css"
+    />
+  </head>
+  <body style="overflow-x: hidden">
     <div class="row">
-      <h1 class="text-center bg-dark text-light">SIMPLE PENDULUM</h1>
+      <h1 class="dark-heading">SIMPLE PENDULUM</h1>
       <div id="container" class="col">
         <div id="mask"></div>
         <div id="anchor"></div>
@@ -21,26 +28,55 @@
         <div id="wire" style="animation: oscilate-wire 3s infinite"></div>
       </div>
       <div class="col-3">
-        <h1 class="text-center bg-dark text-light">VARIABLES</h1>
-        <label for="length">length (mm)</label>
-        <br />
-        <input
-          id="length"
-          name="length"
-          type="number"
-          placeholder="Supension length"
-        />
-        <h1 class="text-center bg-dark text-light">CONTROLS</h1>
+        <div style="height: 300px">
+          <h1 class="dark-heading">VARIABLES</h1>
+          <label for="length">length (mm)</label>
+          <br />
+          <input
+            id="length"
+            name="length"
+            type="number"
+            min="100"
+            max="200"
+            value="100"
+          />
+        </div>
+        <h1 class="dark-heading">CONTROLS</h1>
         <button id="start">Start</button>
-        <button id="stop">stop</button>
+        <button id="stop">Stop</button>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
-    <script src="main.js"></script>
-  </head>
-  <body></body>
+    <img
+      id="pendulum-wave"
+      src="./images/l100.png"
+      width="800"
+      height="400"
+      alt="pendulum-waveform"
+    />
+    <div class="row">
+      <div class="col-3">
+        <h1 class="dark-heading">RESULT</h1>
+      </div>
+      <div class="col-12 px-5 py-2">
+        <div>
+          <span class="h6">Time Period(T): </span>
+          <span class="h6" id="time-period">2.0061 sec</span>
+        </div>
+        <div>
+          <span class="h6">Natural Frequency(rad/s): </span>
+          <span class="h6" id="natural-frequency-rad">3.1321 rad/s</span>
+        </div>
+        <div>
+          <span class="h6">Natural Frequency(Hz): </span>
+          <span class="h6" id="natural-frequency-hz">0.4985 Hz</span>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"
+  ></script>
+  <script src="./js/main.js"></script>
 </html>
