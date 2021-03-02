@@ -27,8 +27,8 @@
         <div id="pendulum-weight" style="animation: oscilate 3s infinite"></div>
         <div id="wire" style="animation: oscilate-wire 3s infinite"></div>
       </div>
-      <div class="col-3">
-        <div style="height: 300px">
+      <div style="width: 400px">
+        <div style="height: 200px">
           <h1 class="dark-heading">VARIABLES</h1>
           <label for="length">length (mm)</label>
           <br />
@@ -50,29 +50,29 @@
         </button>
       </div>
     </div>
-    <img
-      id="pendulum-wave"
-      src="./images/l100.png"
-      width="800"
-      height="400"
-      alt="pendulum-waveform"
-    />
-    <div class="row">
-      <div class="col-3">
+    <div class="d-flex">
+      <img
+        id="pendulum-wave"
+        src="./images/l100.png"
+        width="400"
+        height="200"
+        alt="pendulum-waveform"
+      />
+      <div style="width: 400">
         <h1 class="dark-heading">RESULT</h1>
-      </div>
-      <div class="col-12 px-5 py-2">
-        <div>
-          <span class="h6">Time Period(T): </span>
-          <span class="h6" id="time-period">2.0061 sec</span>
-        </div>
-        <div>
-          <span class="h6">Natural Frequency(rad/s): </span>
-          <span class="h6" id="natural-frequency-rad">3.1321 rad/s</span>
-        </div>
-        <div>
-          <span class="h6">Natural Frequency(Hz): </span>
-          <span class="h6" id="natural-frequency-hz">0.4985 Hz</span>
+        <div class="col-12 px-5 py-2">
+          <div>
+            <span class="h6">Time Period(T): </span>
+            <span class="h6" id="time-period">0.0000 sec</span>
+          </div>
+          <div>
+            <span class="h6">Natural Frequency(rad/s): </span>
+            <span class="h6" id="natural-frequency-rad">0.0000 rad/s</span>
+          </div>
+          <div>
+            <span class="h6">Natural Frequency(Hz): </span>
+            <span class="h6" id="natural-frequency-hz">0.0000 Hz</span>
+          </div>
         </div>
       </div>
     </div>

@@ -9,30 +9,52 @@ let naturalFrequencyHz = document.querySelector("#natural-frequency-hz");
 let pendulumWave = document.querySelector("#pendulum-wave");
 
 length = 100;
+T = 2 * Math.PI * Math.sqrt(length / 9.8);
+timePeriod.innerHTML = `${T.toFixed(4)} sec`;
+naturalFrequencyHz.innerHTML = `${(1 / T).toFixed(4)} Hz`;
+naturalFrequencyRad.innerHTML = `${((1 / T) * 6.283185).toFixed(4)} rad/s`;
+pendulumWave.src = `./images/l${length}.png`;
 
 suspensionLength.addEventListener("change", (event) => {
   if (length == 200 && event.target.value < 200) {
+    length = 180;
+    suspensionLength.value = 180;
+  } else if (length == 180 && event.target.value < 180) {
+    length = 160;
+    suspensionLength.value = 160;
+  } else if (length == 160 && event.target.value < 160) {
+    length = 140;
+    suspensionLength.value = 140;
+  } else if (length == 140 && event.target.value < 140) {
+    length = 120;
+    suspensionLength.value = 120;
+  } else if (length == 120 && event.target.value < 120) {
     length = 100;
     suspensionLength.value = 100;
-    timePeriod.innerHTML = "2.0061 sec";
-    naturalFrequencyRad.innerHTML = "3.1321 rad/s";
-    naturalFrequencyHz.innerHTML = "0.4985 Hz";
-    pendulumWave.src = "./images/l100.png";
-  } else if (event.target.value > 100) {
+  } else if (event.target.value > 180) {
     length = 200;
     suspensionLength.value = 200;
-    timePeriod.innerHTML = "3.0061 sec";
-    naturalFrequencyRad.innerHTML = "4.1321 rad/s";
-    naturalFrequencyHz.innerHTML = "1.4985 Hz";
-    pendulumWave.src = "./images/l200.png";
+  } else if (event.target.value > 160) {
+    length = 180;
+    suspensionLength.value = 180;
+  } else if (event.target.value > 140) {
+    length = 160;
+    suspensionLength.value = 160;
+  } else if (event.target.value > 120) {
+    length = 140;
+    suspensionLength.value = 140;
+  } else if (event.target.value > 100) {
+    length = 120;
+    suspensionLength.value = 120;
   } else {
     length = 100;
     suspensionLength.value = 100;
-    timePeriod.innerHTML = "2.0061 sec";
-    naturalFrequencyRad.innerHTML = "3.1321 rad/s";
-    naturalFrequencyHz.innerHTML = "0.4985 Hz";
-    pendulumWave.src = "./images/l100.png";
   }
+  T = 2 * Math.PI * Math.sqrt(length / 9.8);
+  timePeriod.innerHTML = `${T.toFixed(4)} sec`;
+  naturalFrequencyHz.innerHTML = `${(1 / T).toFixed(4)} Hz`;
+  naturalFrequencyRad.innerHTML = `${((1 / T) * 6.283185).toFixed(4)} rad/s`;
+  pendulumWave.src = `./images/l${length}.png`;
 
   let pendulumKeyframe = `
   @keyframes oscilate${length} {
