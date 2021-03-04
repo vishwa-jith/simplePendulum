@@ -13,7 +13,16 @@ T = 2 * Math.PI * Math.sqrt(length / 9.8);
 timePeriod.innerHTML = `${T.toFixed(4)} sec`;
 naturalFrequencyHz.innerHTML = `${(1 / T).toFixed(4)} Hz`;
 naturalFrequencyRad.innerHTML = `${((1 / T) * 6.283185).toFixed(4)} rad/s`;
-pendulumWave.src = `./images/l${length}.png`;
+pendulumWave.src = `./images/l${length}.gif`;
+
+const stopPendulum = () => {
+  pendulumWeight.style["animation-play-state"] = "paused";
+  wire.style["animation-play-state"] = "paused";
+  start.classList.add("btn-outline-dark");
+  start.classList.remove("btn-dark");
+  stop.classList.add("btn-dark");
+  stop.classList.remove("btn-outline-dark");
+};
 
 suspensionLength.addEventListener("change", (event) => {
   if (length == 200 && event.target.value < 200) {
@@ -50,11 +59,11 @@ suspensionLength.addEventListener("change", (event) => {
     length = 100;
     suspensionLength.value = 100;
   }
-  T = 2 * Math.PI * Math.sqrt(length / 9.8);
-  timePeriod.innerHTML = `${T.toFixed(4)} sec`;
-  naturalFrequencyHz.innerHTML = `${(1 / T).toFixed(4)} Hz`;
-  naturalFrequencyRad.innerHTML = `${((1 / T) * 6.283185).toFixed(4)} rad/s`;
-  pendulumWave.src = `./images/l${length}.png`;
+
+  timePeriod.innerHTML = `0.0000 sec`;
+  naturalFrequencyHz.innerHTML = `0.0000 Hz`;
+  naturalFrequencyRad.innerHTML = `0.0000 rad/s`;
+  pendulumWave.src = `./images/l.png`;
 
   let pendulumKeyframe = `
   @keyframes oscilate${length} {
@@ -102,16 +111,11 @@ suspensionLength.addEventListener("change", (event) => {
   wire.style = `animation: oscilate-wire${length} 3s infinite;`;
   wire.style.top = `-${2 * length}px`;
   wire.style.height = `${4 * length}px`;
+
+  stopPendulum();
 });
 
-stop.addEventListener("click", () => {
-  pendulumWeight.style["animation-play-state"] = "paused";
-  wire.style["animation-play-state"] = "paused";
-  start.classList.add("btn-outline-dark");
-  start.classList.remove("btn-dark");
-  stop.classList.add("btn-dark");
-  stop.classList.remove("btn-outline-dark");
-});
+stop.addEventListener("click", stopPendulum);
 
 start.addEventListener("click", () => {
   pendulumWeight.style["animation-play-state"] = "running";
@@ -120,4 +124,10 @@ start.addEventListener("click", () => {
   stop.classList.remove("btn-dark");
   start.classList.add("btn-dark");
   start.classList.remove("btn-outline-dark");
+
+  T = 2 * Math.PI * Math.sqrt(length / 9.8);
+  timePeriod.innerHTML = `${T.toFixed(4)} sec`;
+  naturalFrequencyHz.innerHTML = `${(1 / T).toFixed(4)} Hz`;
+  naturalFrequencyRad.innerHTML = `${((1 / T) * 6.283185).toFixed(4)} rad/s`;
+  pendulumWave.src = `./images/l${length}.gif`;
 });
